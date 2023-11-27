@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 
 public class MainPanel extends AppPanel{
 
+	// 생성자
 	public MainPanel(){
 		setBackground();
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
@@ -49,10 +50,12 @@ public class MainPanel extends AppPanel{
 		add(Box.createVerticalGlue());
 	}
 
+	// 시작 버튼 리스너
 	private void clickStartButton(ActionEvent event) {
 		App.getInstance().changePanel(new GameSettingPanel());
 	}
 
+	// 도움말 버튼 리스너
 	private void clickHelpButton(ActionEvent event) {
 		App.getInstance().changePanel(new HelpPanel());
 	}

@@ -7,9 +7,7 @@ public class MainFont {
 
 	private static Font font;
 
-	/**
-	 * Font파일을 읽고 Font 를 저장함
-	 */
+	// Font파일을 읽고 Font 를 저장함
 	public static void load() {
 		InputStream fontStream = MainFont.class.getResourceAsStream("/NanumSquareRoundR.ttf");
 		try{
@@ -20,11 +18,7 @@ public class MainFont {
 		}
 	}
 
-	/**
-	 * 저장된 폰트를 가져옴
-	 *
-	 * @return Font
-	 */
+	// 저장된 폰트를 가져옴
 	public static Font get() {
 		return font;
 	}
