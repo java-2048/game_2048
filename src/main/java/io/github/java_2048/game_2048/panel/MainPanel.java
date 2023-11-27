@@ -11,13 +11,13 @@ public class MainPanel extends AppPanel{
 
 	// 생성자
 	public MainPanel(){
+		// panel 기본 세팅
 		setBackground();
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		// 중앙에 두기 위함
 		add(Box.createGlue());
 
-		Dimension btnSize = new Dimension(150, 50);
-		Font btnFont = MainFont.get().deriveFont(Font.BOLD, 30);
-
+		// 2048 라벨
 		JLabel title = new JLabel("2048");
 		title.setFont(MainFont.get().deriveFont(Font.BOLD, 100));
 		title.setAlignmentX(CENTER_ALIGNMENT);
@@ -25,8 +25,14 @@ public class MainPanel extends AppPanel{
 		title.setForeground(new Color(118, 111, 101));
 		add(title);
 
+		// 높이 30 간격 추가
 		add(Box.createVerticalStrut(30));
 
+		// 해당 패널에서 사용될 버튼 기본 값
+		Dimension btnSize = new Dimension(150, 50);
+		Font btnFont = MainFont.get().deriveFont(Font.BOLD, 30);
+
+		// 시작 버튼 생성
 		JButton startBtn = new JButton("시작");
 		startBtn.setMaximumSize(btnSize);
 		startBtn.setFont(btnFont);
@@ -36,8 +42,10 @@ public class MainPanel extends AppPanel{
 		startBtn.setAlignmentX(CENTER_ALIGNMENT);
 		add(startBtn);
 
+		// 높이 10 간격 추가
 		add(Box.createVerticalStrut(10));
 
+		// 도움말 버튼 추가
 		JButton helpBtn = new JButton("도움말");
 		helpBtn.setMaximumSize(btnSize);
 		helpBtn.setFont(btnFont);
