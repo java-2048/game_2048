@@ -5,6 +5,10 @@ plugins {
 group = "io.github.java_2048"
 version = "1.0-SNAPSHOT"
 
+java {
+    version
+}
+
 repositories {
     mavenCentral()
 }
@@ -16,4 +20,8 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+tasks.jar{
+    manifest.attributes["Main-Class"] = "io.github.java_2048.game_2048.App"
 }
