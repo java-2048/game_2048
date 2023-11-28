@@ -6,7 +6,9 @@ group = "io.github.java_2048"
 version = "1.0-SNAPSHOT"
 
 java {
-    version
+    toolchain{
+        languageVersion.set(JavaLanguageVersion.of(17))
+    }
 }
 
 repositories {
