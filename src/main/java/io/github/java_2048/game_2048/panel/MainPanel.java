@@ -33,7 +33,7 @@ public class MainPanel extends AppPanel{
 		Font btnFont = MainFont.get().deriveFont(Font.BOLD, 30);
 
 		// 시작 버튼 생성
-		JButton startBtn = new JButton("시작");
+		JButton startBtn = new JButton("PLAY");
 		startBtn.setMaximumSize(btnSize);
 		startBtn.setFont(btnFont);
 		startBtn.setForeground(Color.white);
@@ -46,7 +46,7 @@ public class MainPanel extends AppPanel{
 		add(Box.createVerticalStrut(10));
 
 		// 도움말 버튼 추가
-		JButton helpBtn = new JButton("도움말");
+		JButton helpBtn = new JButton("HELP");
 		helpBtn.setMaximumSize(btnSize);
 		helpBtn.setFont(btnFont);
 		helpBtn.setForeground(Color.white);

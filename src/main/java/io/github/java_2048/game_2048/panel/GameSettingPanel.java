@@ -63,14 +63,12 @@ public class GameSettingPanel extends AppPanel{
 		add(Box.createVerticalStrut(15));
 
 		// 시작 버튼
-		JButton startBtn = new JButton("시작");
+		JButton startBtn = new JButton("PLAY");
 		startBtn.setMaximumSize(new Dimension(150, 50));
 		startBtn.setFont(font);
 		startBtn.setForeground(Color.white);
 		startBtn.setBackground(getBtnColor());
-		startBtn.addActionListener((ActionEvent event) -> {
-			clickStartButton((Integer) dropdown.getSelectedItem());
-		});
+		startBtn.addActionListener((ActionEvent event) -> clickStartButton((Integer) dropdown.getSelectedItem()));
 		startBtn.setAlignmentX(CENTER_ALIGNMENT);
 		add(startBtn);
 	}
