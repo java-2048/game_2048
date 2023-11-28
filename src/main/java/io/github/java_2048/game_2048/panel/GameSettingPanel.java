@@ -68,7 +68,9 @@ public class GameSettingPanel extends AppPanel{
 		startBtn.setFont(font);
 		startBtn.setForeground(Color.white);
 		startBtn.setBackground(getBtnColor());
-		startBtn.addActionListener(this::clickStartButton);
+		startBtn.addActionListener((ActionEvent event) -> {
+			clickStartButton((Integer) dropdown.getSelectedItem());
+		});
 		startBtn.setAlignmentX(CENTER_ALIGNMENT);
 		add(startBtn);
 	}
@@ -79,7 +81,7 @@ public class GameSettingPanel extends AppPanel{
 	}
 
 	// 시작 버튼 리스너
-	private void clickStartButton(ActionEvent event) {
-		App.getInstance().changePanel(new GamePlayPanel());
+	private void clickStartButton(Integer difficulty) {
+		App.getInstance().changePanel(new GamePlayPanel(difficulty));
 	}
 }
