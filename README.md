@@ -14,5 +14,6 @@
 ### HelpPanel
 
 ### GamePlayPanel
+![GamePlayPanel.png](/assets/GamePlayPanel.png)
 
 ### GameResultPanel
