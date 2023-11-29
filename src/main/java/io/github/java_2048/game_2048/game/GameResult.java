@@ -4,6 +4,5 @@ public record GameResult(
 		boolean isWin,
 		int goal,
 		int score,
-		int move,
-		long playTime
+		int move
 ) { }
