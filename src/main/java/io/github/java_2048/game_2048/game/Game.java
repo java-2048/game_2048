@@ -70,19 +70,21 @@ public class Game {
 
 	// 게임이 끝났는지 확인
 	public GameResult isFinish(){
+		GameResult result = new GameResult(false, goal, score, move);
 		for(int i = 0; i < SIZE; i++){
 			for(int j = 0; j < SIZE; j++){
 				int n = board[i][j].getNumber();
 				if(n == goal){
 					return new GameResult(true, goal, score, move);
 				}
+				if(result == null) continue;
 				// 움직일 수 있음
 				if(n == 0 || (j < SIZE - 1 && n == board[i][j + 1].getNumber()) || (i < SIZE - 1 && n == board[i + 1][j].getNumber())){
-					return null;
+					result = null;
 				}
 			}
 		}
-		return new GameResult(false, goal, score, move);
+		return result;
 	}
 
 	// direction 값에 따라 이동하고 이동되면 move 카운트
