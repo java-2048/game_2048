@@ -42,7 +42,7 @@ public class App extends JFrame {
 		App app = App.getInstance();
 		app.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		app.setLocationRelativeTo(null);
-		app.setVisible(true);
 		app.setResizable(false);
+		app.setVisible(true);
 	}
 }
