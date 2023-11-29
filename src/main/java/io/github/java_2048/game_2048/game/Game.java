@@ -8,6 +8,7 @@ public class Game {
 	//빈 타일들 위치를 가져오기 위함
 	private record EmptyTile(int x, int y) { }
 
+	// board 초기화
 	private final Tile[][] board = {
 			{new Tile(), new Tile(), new Tile(), new Tile()},
 			{new Tile(), new Tile(), new Tile(), new Tile()},

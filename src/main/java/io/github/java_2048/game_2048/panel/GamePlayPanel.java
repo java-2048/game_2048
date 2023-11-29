@@ -114,7 +114,7 @@ public class GamePlayPanel extends AppPanel implements KeyListener {
 				game.moveTiles(MoveDirection.RIGHT);
 				break;
 			default:
-				return;
+				return;// 다른 키값은 그냥 리턴해서 메소드를 종료 시킴
 		}
 		gamePanel.repaint();
 		scoreFiled.setText(String.valueOf(game.getScore()));
