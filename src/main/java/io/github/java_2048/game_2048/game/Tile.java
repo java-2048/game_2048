@@ -64,7 +64,7 @@ public class Tile extends JPanel {
 
 	// 랜덤하게 2 또는 4로 만들어짐
 	public void create(){
-		create(Math.random() < 0.8 ? 2 : 4);
+		create(Math.random() < 0.9 ? 2 : 4);
 	}
 
 	// 특정 타일 그대로 만듬
