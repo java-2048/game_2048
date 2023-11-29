@@ -61,6 +61,7 @@ public class Game {
 	// 랜덤하게 타일을 생성함
 	public void spawnTile() {
 		ArrayList<EmptyTile> emptyTiles = getEmptyTiles();
+		if(emptyTiles.isEmpty()) return;
 		int index = (new Random()).nextInt(emptyTiles.size());
 		EmptyTile tile = emptyTiles.get(index);
 		board[tile.y][tile.x].create();
@@ -85,19 +86,15 @@ public class Game {
 
 	// direction 값에 따라 이동하고 이동되면 move 카운트
 	public void moveTiles(MoveDirection direction){
-		switch(direction){
-			case UP:
-				if(moveUp()) move++;
-				break;
-			case DOWN:
-				if(moveDown()) move++;
-				break;
-			case LEFT:
-				if(moveLeft()) move++;
-				break;
-			case RIGHT:
-				if(moveRight()) move++;
-				break;
+		boolean isMoved = switch(direction){
+			case UP -> moveUp();
+			case DOWN -> moveDown();
+			case LEFT -> moveLeft();
+			case RIGHT -> moveRight();
+		};
+		if(isMoved) {
+			move++;
+			spawnTile();
 		}
 	}
 

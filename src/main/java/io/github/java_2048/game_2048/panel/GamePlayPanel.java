@@ -116,7 +116,6 @@ public class GamePlayPanel extends AppPanel implements KeyListener {
 			default:
 				return;
 		}
-		game.spawnTile();
 		gamePanel.repaint();
 		scoreFiled.setText(String.valueOf(game.getScore()));
 		if(game.isFinish() != null){
