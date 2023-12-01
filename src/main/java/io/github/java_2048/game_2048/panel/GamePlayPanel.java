@@ -35,7 +35,7 @@ public class GamePlayPanel extends AppPanel implements KeyListener {
 
 		renderBoard();
 
-		// 리싀너 등록
+		// 리스너 등록
 		App.getInstance().setFocusable(true);
 		App.getInstance().requestFocus();
 		App.getInstance().addKeyListener(this);
@@ -51,6 +51,7 @@ public class GamePlayPanel extends AppPanel implements KeyListener {
 
 		headPanel.add(Box.createHorizontalStrut(20));
 
+		// 난이도 출력
 		JLabel headLabel = new JLabel(String.valueOf(game.getGoal()));
 		headLabel.setFont(MainFont.get().deriveFont(Font.BOLD, 70));
 		headLabel.setForeground(new Color(118, 111, 101));
@@ -59,10 +60,12 @@ public class GamePlayPanel extends AppPanel implements KeyListener {
 
 		headPanel.add(Box.createHorizontalStrut(100));
 
+		// 스코어 라벨
 		JLabel scoreLabel = new JLabel("SCORE: ");
 		scoreLabel.setFont(MainFont.get().deriveFont(Font.BOLD, 40));
 		headPanel.add(scoreLabel);
 
+		// 스코어 출력
 		scoreFiled.setEditable(false);
 		scoreFiled.setFont(MainFont.get().deriveFont(Font.PLAIN, 40));
 		scoreFiled.setForeground(Color.white);
