@@ -39,10 +39,10 @@ public class GameSettingPanel extends AppPanel{
 		add(Box.createVerticalStrut(100));
 
 		// 난이도 선택 라벨
-		JLabel label = new JLabel("난이도 선택");
+		JLabel label = new JLabel("Choose difficult");
 		label.setFont(MainFont.get().deriveFont(Font.BOLD, 50));
 		label.setAlignmentX(CENTER_ALIGNMENT);
-		label.setMaximumSize(new Dimension(253, 50));
+		label.setMaximumSize(new Dimension(400, 50));
 		label.setForeground(new Color(118, 111, 101));
 		add(label);
 
@@ -63,7 +63,7 @@ public class GameSettingPanel extends AppPanel{
 		add(Box.createVerticalStrut(15));
 
 		// 시작 버튼
-		JButton startBtn = new JButton("PLAY");
+		JButton startBtn = new JButton("START");
 		startBtn.setMaximumSize(new Dimension(150, 50));
 		startBtn.setFont(font);
 		startBtn.setForeground(Color.white);
