@@ -23,7 +23,7 @@ public class GameSettingPanel extends AppPanel{
 		panel.setBackground(getBackgroundColor());
 		panel.setMaximumSize(new Dimension(700, 100));
 		panel.setLayout(new FlowLayout(FlowLayout.LEFT));
-		JButton backBtn = new JButton("< 뒤로가기");
+		JButton backBtn = new JButton("< BACK");
 		backBtn.setMaximumSize(new Dimension(130, 50));
 		backBtn.setFont(font);
 		backBtn.setForeground(getBtnColor());
