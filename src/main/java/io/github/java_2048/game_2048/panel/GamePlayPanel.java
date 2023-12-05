@@ -13,7 +13,6 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-
 public class GamePlayPanel extends AppPanel implements KeyListener {
 
 	private final Game game;
@@ -37,7 +36,7 @@ public class GamePlayPanel extends AppPanel implements KeyListener {
 
 		renderBoard();
 
-		// 리싀너 등록
+		// 리스너 등록
 		App.getInstance().setFocusable(true);
 		App.getInstance().requestFocus();
 		App.getInstance().addKeyListener(this);
@@ -53,6 +52,7 @@ public class GamePlayPanel extends AppPanel implements KeyListener {
 
 		headPanel.add(Box.createHorizontalStrut(20));
 
+		// 목표 점수(난이도) 출력
 		JLabel headLabel = new JLabel(String.valueOf(game.getGoal()));
 		headLabel.setFont(MainFont.get().deriveFont(Font.BOLD, 70));
 		headLabel.setForeground(new Color(118, 111, 101));
@@ -61,10 +61,12 @@ public class GamePlayPanel extends AppPanel implements KeyListener {
 
 		headPanel.add(Box.createHorizontalStrut(100));
 
+		// 스코어 라벨
 		JLabel scoreLabel = new JLabel("SCORE: ");
 		scoreLabel.setFont(MainFont.get().deriveFont(Font.BOLD, 40));
 		headPanel.add(scoreLabel);
 
+		// 스코어 출력
 		scoreFiled.setEditable(false);
 		scoreFiled.setFont(MainFont.get().deriveFont(Font.PLAIN, 40));
 		scoreFiled.setForeground(Color.white);
@@ -123,7 +125,7 @@ public class GamePlayPanel extends AppPanel implements KeyListener {
 
 
 
-		//디버깅용 만약 찾은 사람이 있다면 반드시 지우시오.
+		//TODO: 디버깅용 만약 찾은 사람이 있다면 반드시 지우시오.
 		GameResult result = new GameResult(true,10,5000000,10);
 		App.getInstance().changePanel(new GameResultPanel(result,game.getGoal()));
 		//요기까지 디버깅용
@@ -136,7 +138,7 @@ public class GamePlayPanel extends AppPanel implements KeyListener {
 
 			//끝났을 때 GameResultPanel을 띄우기 위함
 			//디버깅용을 지웠다면 여기 밑에 부분 주석 풀어줘요!!!
-			//App.getInstance().changePanel(new GameResultPanel(game.isFinish(),game.getGoal()));
+			//TODO: App.getInstance().changePanel(new GameResultPanel(game.isFinish(),game.getGoal()));
 		}
 	}
 
