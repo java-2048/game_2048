@@ -19,12 +19,16 @@ public class App extends JFrame {
 		return instance;
 	}
 
+	public App(AppPanel panel) {
+		setTitle("2048");
+		setSize(700, 700);
+		setContentPane(panel);
+	}
+
 	// 비공개 생성자
 	// 싱글톤 패턴을 위해 비공개로 설정함
 	private App() {
-		setTitle("2048");
-		setSize(700, 700);
-		setContentPane(new MainPanel());
+		this(new MainPanel());
 	}
 
 	// 패널 변경시 호출할 메소드
