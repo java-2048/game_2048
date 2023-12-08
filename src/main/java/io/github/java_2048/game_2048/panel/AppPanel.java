@@ -3,7 +3,7 @@ package io.github.java_2048.game_2048.panel;
 import javax.swing.JPanel;
 import java.awt.Color;
 
-public abstract class AppPanel extends JPanel implements Base{
+public abstract class AppPanel extends JPanel implements AppInterface {
 
 	// 기본 배경 색으로 배경지정
 	public void setBackground(){
