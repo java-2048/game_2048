@@ -77,8 +77,8 @@ public class Game {
 		board[tile.y][tile.x].create();
 	}
 
-	// 게임이 끝났는지 확인
-	public GameResult isFinish(){
+	// 게임이 끝났는지 확인하고 결과를 리턴함
+	public GameResult getResult(){
 		GameResult result = new GameResult(false, goal, score, move);
 		for(int i = 0; i < SIZE; i++){
 			for(int j = 0; j < SIZE; j++){

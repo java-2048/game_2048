@@ -125,8 +125,8 @@ public class GamePlayPanel extends AppPanel implements KeyListener {
 		//요기까지 디버깅용
 
 
-		if(game.isFinish() != null){
-			System.out.println(game.isFinish());
+		if(game.getResult() != null){
+			System.out.println(game.getResult());
 			App.getInstance().removeKeyListener(this);
 
 
