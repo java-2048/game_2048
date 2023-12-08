@@ -1,6 +1,7 @@
 package io.github.java_2048.game_2048.game;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Game {
@@ -42,8 +43,16 @@ public class Game {
 	}
 
 	// 현 게임 보드를 가져옴
-	public Tile[][] getBoard(){
-		return board;
+	public List<Tile> getBoard(){
+		List<Tile> tiles = new ArrayList<>();
+
+		for(int y = 0; y < Game.SIZE; y++){
+			for(int x = 0; x < Game.SIZE; x++){
+				tiles.add(board[y][x]);
+			}
+		}
+
+		return tiles;
 	}
 
 	// 빈 타일 위치들을 알려줌

@@ -5,7 +5,6 @@ import io.github.java_2048.game_2048.font.MainFont;
 import io.github.java_2048.game_2048.game.Game;
 import io.github.java_2048.game_2048.game.GameResult;
 import io.github.java_2048.game_2048.game.MoveDirection;
-import io.github.java_2048.game_2048.game.Tile;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
@@ -86,12 +85,7 @@ public class GamePlayPanel extends AppPanel implements KeyListener {
 		gamePanel.setMaximumSize(new Dimension(500, 500));
 		gamePanel.setBorder(new LineBorder(new Color(189, 173, 160), 10));
 
-		Tile[][] board = game.getBoard();
-		for(int y = 0; y < Game.SIZE; y++){
-			for(int x = 0; x < Game.SIZE; x++){
-				gamePanel.add(board[y][x]);
-			}
-		}
+		game.getBoard().forEach((gamePanel::add));
 
 		add(gamePanel);
 	}
