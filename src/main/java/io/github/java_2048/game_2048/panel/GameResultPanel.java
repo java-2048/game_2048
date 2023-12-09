@@ -6,7 +6,6 @@ import io.github.java_2048.game_2048.game.GameResult;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -26,7 +25,7 @@ public class GameResultPanel extends AppPanel {
 		Dimension btnSize = new Dimension(150, 50);
 		Font btnFont = MainFont.get().deriveFont(Font.BOLD, 30);
 
-		int HighScore = sendServer(result.score(), result.goal());
+		int HighScore = getHighScore(result.score(), result.goal());
 
 		if(result.isWin()){
 			// 이겼을 때
@@ -54,25 +53,7 @@ public class GameResultPanel extends AppPanel {
 
 
 		//게임 결과 창
-		JLabel resultlabel = new JLabel();
-		//고정폭 글꼴로 바꿔주기 위함. 결과창을 띄울 때 가변폭 글꼴이면 보기 안좋음.
-		Font fixedWidthFont = new Font("Monospaced", Font.BOLD, 30);
-
-		resultlabel.setText("<html>" +
-				"DIFFICULT&nbsp;&nbsp;" + result.goal() + "<br>" +
-				"SCORE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + result.score() + "<br>" +
-				"HIGH SCORE&nbsp;&nbsp;" + HighScore + "<br>" +
-				"MOVE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + result.move() + "<br>" +
-				"</html>");
-
-
-		resultlabel.setFont(fixedWidthFont);
-		resultlabel.setMaximumSize(new Dimension(500, 0));
-		resultlabel.setForeground(new Color(118, 111, 101));
-		resultlabel.setAlignmentX(CENTER_ALIGNMENT);
-		resultlabel.setAlignmentY(CENTER_ALIGNMENT);
-		resultlabel.setHorizontalAlignment(SwingConstants.CENTER);
-		add(resultlabel);
+		add(makeResultLabel(result, HighScore));
 
 		add(Box.createVerticalStrut(150));
 
@@ -83,7 +64,7 @@ public class GameResultPanel extends AppPanel {
 		startBtn.setFont(btnFont);
 		startBtn.setForeground(Color.white);
 		startBtn.setBackground(getBtnColor());
-		startBtn.addActionListener(this::clickMainButton);
+		startBtn.addActionListener(e -> App.getInstance().changePanel(new MainPanel()));
 		startBtn.setAlignmentX(CENTER_ALIGNMENT);
 		add(startBtn);
 
@@ -92,8 +73,27 @@ public class GameResultPanel extends AppPanel {
 
 	}
 
-	private void clickMainButton(ActionEvent event){
-		App.getInstance().changePanel(new MainPanel());
+	// 게임 결과를 출력할 label를 만들어주는 메소드
+	private JLabel makeResultLabel(GameResult result, int highScore){
+		JLabel resultlabel = new JLabel();
+		//고정폭 글꼴로 바꿔주기 위함. 결과창을 띄울 때 가변폭 글꼴이면 보기 안좋음.
+		Font fixedWidthFont = new Font("Monospaced", Font.BOLD, 30);
+
+		resultlabel.setText("<html>" +
+				"DIFFICULT&nbsp;&nbsp;" + result.goal() + "<br>" +
+				"SCORE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + result.score() + "<br>" +
+				"HIGH SCORE&nbsp;&nbsp;" + highScore + "<br>" +
+				"MOVE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + result.move() + "<br>" +
+				"</html>");
+
+
+		resultlabel.setFont(fixedWidthFont);
+		resultlabel.setMaximumSize(new Dimension(500, 0));
+		resultlabel.setForeground(new Color(118, 111, 101));
+		resultlabel.setAlignmentX(CENTER_ALIGNMENT);
+		resultlabel.setAlignmentY(CENTER_ALIGNMENT);
+		resultlabel.setHorizontalAlignment(SwingConstants.CENTER);
+		return resultlabel;
 	}
 
 

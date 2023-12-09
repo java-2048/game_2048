@@ -34,7 +34,19 @@ public class HelpPanel extends AppPanel {
 		panel.add(backButton);
 		add(panel);
 
-		// 규칙 안내 라벨
+		// 규칙 안내 라벨 아래에 공간 추가
+		add(Box.createVerticalStrut(60));
+		add(makeRuleLabel());
+
+		// 높이 30 간격 추가
+		add(Box.createVerticalStrut(30));
+
+		// 중앙 정렬을 위한 높이 조절
+		add(Box.createVerticalGlue());
+	}
+
+	// 규칙 출력 라벨 제작하는 메소드
+	private JLabel makeRuleLabel(){
 		JLabel ruleLabel = new JLabel("<html><div align='center'> GAME RULES<br><br><br>"
 				+ "- You can move tiles using the WASD keys or arrow keys.<br><br>"
 				+ "&nbsp;- When tiles with the same number touch, they merge into one.<br><br>"
@@ -43,16 +55,7 @@ public class HelpPanel extends AppPanel {
 		ruleLabel.setFont(MainFont.get().deriveFont(Font.BOLD, 24));
 		ruleLabel.setAlignmentX(CENTER_ALIGNMENT); // 텍스트 가운데 정렬
 		ruleLabel.setForeground(new Color(118, 111, 101));
-
-		// 규칙 안내 라벨 아래에 공간 추가
-		add(Box.createVerticalStrut(60));
-		add(ruleLabel);
-
-		// 높이 30 간격 추가
-		add(Box.createVerticalStrut(30));
-
-		// 중앙 정렬을 위한 높이 조절
-		add(Box.createVerticalGlue());
+		return ruleLabel;
 	}
 
 	// 돌아가기 버튼 리스너
