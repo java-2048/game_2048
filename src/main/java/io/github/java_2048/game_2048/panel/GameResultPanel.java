@@ -10,6 +10,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
+import java.net.InetSocketAddress;
 import java.net.Socket;
 
 public class GameResultPanel extends AppPanel {
@@ -96,13 +97,14 @@ public class GameResultPanel extends AppPanel {
 		return resultlabel;
 	}
 
-
-	private int sendServer(int score, int difficult){
+	// 서버에 데이터를 보내고 최고 기록을 가져오는 메소드
+	private int getHighScore(int score, int difficult){
 		Socket socket = null;
 		String highscore = "0";
 
 		try{
-			socket = new Socket("172.19.134.162", 8000);
+			socket = new Socket();
+			socket.connect(new InetSocketAddress("172.19.134.162", 8000), 2000);
 			System.out.println("conneted server");
 			PrintStream out = new PrintStream(socket.getOutputStream());
 			BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
