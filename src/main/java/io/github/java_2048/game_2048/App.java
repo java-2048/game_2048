@@ -1,6 +1,7 @@
 package io.github.java_2048.game_2048;
 
 import io.github.java_2048.game_2048.font.MainFont;
+import io.github.java_2048.game_2048.panel.AppInterface;
 import io.github.java_2048.game_2048.panel.AppPanel;
 import io.github.java_2048.game_2048.panel.MainPanel;
 
@@ -33,11 +34,14 @@ public class App extends JFrame {
 
 	// 패널 변경시 호출할 메소드
 	// 기존 패널 요소들은 삭제하고 panel로 변경함
-	public void changePanel(AppPanel panel) {
-		getContentPane().removeAll();
-		setContentPane(panel);
-		revalidate();
-		repaint();
+	public void changePanel(AppInterface appInterface) {
+		// 다운캐스팅
+		if(appInterface instanceof JPanel panel) {
+			getContentPane().removeAll();
+			setContentPane(panel);
+			revalidate();
+			repaint();
+		}
 	}
 
 	// 실행 시킬 main 메소드
