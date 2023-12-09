@@ -117,22 +117,10 @@ public class GamePlayPanel extends AppPanel implements KeyListener {
 		gamePanel.repaint();
 		scoreFiled.setText(String.valueOf(game.getScore()));
 
-
-
-		//TODO: 디버깅용 만약 찾은 사람이 있다면 반드시 지우시오.
-		GameResult result = new GameResult(true,10,5000000,10);
-		App.getInstance().changePanel(new GameResultPanel(result,game.getGoal()));
-		//요기까지 디버깅용
-
-
 		if(game.getResult() != null){
 			System.out.println(game.getResult());
 			App.getInstance().removeKeyListener(this);
-
-
-			//끝났을 때 GameResultPanel을 띄우기 위함
-			//디버깅용을 지웠다면 여기 밑에 부분 주석 풀어줘요!!!
-			//TODO: App.getInstance().changePanel(new GameResultPanel(game.isFinish(),game.getGoal()));
+			App.getInstance().changePanel(new GameResultPanel(game.getResult(),game.getGoal()));
 		}
 	}
 
