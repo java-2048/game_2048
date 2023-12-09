@@ -117,10 +117,11 @@ public class GamePlayPanel extends AppPanel implements KeyListener {
 		gamePanel.repaint();
 		scoreFiled.setText(String.valueOf(game.getScore()));
 
-		if(game.getResult() != null){
+		GameResult result = game.getResult();
+		if(result != null){
 			System.out.println(game.getResult());
 			App.getInstance().removeKeyListener(this);
-			App.getInstance().changePanel(new GameResultPanel(game.getResult(),game.getGoal()));
+			App.getInstance().changePanel(new GameResultPanel(result));
 		}
 	}
 
