@@ -12,8 +12,11 @@
 ![GameSetttingPanel2.png](/assets/GameSetttingPanel2.png)
 
 ### HelpPanel
+![HelpPanel.png](/assets/HelpPanel.png)
 
 ### GamePlayPanel
 ![GamePlayPanel.png](/assets/GamePlayPanel.png)
 
 ### GameResultPanel
+![GameResultPanel1.png](/assets/GameResultPanel1.png)
+![GameResultPanel2.png](/assets/GameResultPanel2.png)
