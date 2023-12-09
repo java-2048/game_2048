@@ -21,6 +21,7 @@ public class HelpPanel extends AppPanel {
 		Font btnFont = MainFont.get().deriveFont(Font.BOLD, 30);
 		panel.setMaximumSize(new Dimension(700, 100));
 		panel.setLayout(new FlowLayout(FlowLayout.LEFT));
+
 		JButton backButton = new JButton("< BACK");
 		backButton.setMaximumSize(new Dimension(130, 50));
 		backButton.setFont(btnFont);
