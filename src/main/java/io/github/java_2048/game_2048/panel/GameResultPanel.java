@@ -104,7 +104,7 @@ public class GameResultPanel extends AppPanel {
 
 		try{
 			socket = new Socket();
-			socket.connect(new InetSocketAddress("172.19.134.162", 8000), 2000);
+			socket.connect(new InetSocketAddress("0.0.0.0", 8000), 2000);
 			System.out.println("conneted server");
 			PrintStream out = new PrintStream(socket.getOutputStream());
 			BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
