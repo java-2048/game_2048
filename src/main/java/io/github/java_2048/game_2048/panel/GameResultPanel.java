@@ -83,7 +83,7 @@ public class GameResultPanel extends AppPanel {
 		resultlabel.setText("<html>" +
 				"DIFFICULT&nbsp;&nbsp;" + result.goal() + "<br>" +
 				"SCORE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + result.score() + "<br>" +
-				"HIGH SCORE&nbsp;&nbsp;" + highScore + "<br>" +
+				"HIGH SCORE&nbsp;" + highScore + "<br>" +
 				"MOVE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + result.move() + "<br>" +
 				"</html>");
 
